@@ -1,0 +1,21 @@
+DONE | Convert client/ Dockerfile to draw from build folder and
+	serve static content through nginx
+
+Review/rewrite server/ Dockerfile to use node image
+
+create local mongodb container and connect to it from node
+
+finish mongodb models for first iteration
+
+change front-end back to paperbase and create sub-pages modules
+
+implement sub-pages with navigation
+
+create default super-user example
+
+give default super-user the ability to make other users in db
+	as part of the "site"
+
+Add bug-tracking tickets and assignments based on user with timestamps
+
+(tickets will only have; date-created, assigned, description, status)

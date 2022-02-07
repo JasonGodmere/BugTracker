@@ -1,19 +1,10 @@
 # React client
 
+# Be sure to have a fresh static build with following command:
+# npm run build
+
 # Build react client
-FROM node:16-alpine
+FROM nginx:alpine
 
 # Working directory of app
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install --silent
-
-# copy local files to app folder
-COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+COPY ./build/ /usr/share/nginx/html/

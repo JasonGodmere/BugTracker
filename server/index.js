@@ -1,4 +1,15 @@
 import express from 'express';
+const app = express();
+const port = 5000;
+
+app.get('/', (req, res) => res.json({
+    rocket: "falcon 9",
+    launchpad: "treetop pad"
+}));
+
+app.listen(port, () => console.log(`Server listening on port ${port}`))
+
+/*import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
@@ -13,4 +24,4 @@ const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => app.listen(PORT, console.log(`Server running on port ${PORT}`)))
-    .catch((error) => console.log(error.message));
+    .catch((error) => console.log(error.message));*/

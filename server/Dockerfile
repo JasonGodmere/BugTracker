@@ -9,12 +9,11 @@ WORKDIR /usr/src/app
 # Install dependencies
 COPY package*.json ./
 
-RUN npm install --silent
+RUN npm install
 
 # COPY app source code
 COPY . .
 
-# Exports
 EXPOSE 5000
 
 CMD ["npm", "start"]
