@@ -1,9 +1,9 @@
 DONE | Convert client/ Dockerfile to draw from build folder and
 	serve static content through nginx
 
-Review/rewrite server/ Dockerfile to use node image
+DONE | Review/rewrite server/ Dockerfile to use node image
 
-create local mongodb container and connect to it from node
+USING ATLAS | create local mongodb container and connect to it from node
 
 finish mongodb models for first iteration
 
