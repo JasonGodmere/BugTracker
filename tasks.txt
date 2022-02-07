@@ -3,19 +3,14 @@ DONE | Convert client/ Dockerfile to draw from build folder and
 
 DONE | Review/rewrite server/ Dockerfile to use node image
 
-USING ATLAS | create local mongodb container and connect to it from node
+DONE USING ATLAS | create local mongodb container and connect to it from node
 
-finish mongodb models for first iteration
+DONE | finish mongodb models for first iteration
+
+fill in empty controllers code for new mongodb model requests
 
 change front-end back to paperbase and create sub-pages modules
 
-implement sub-pages with navigation
+connect users tab and sub-pages to backend
 
-create default super-user example
-
-give default super-user the ability to make other users in db
-	as part of the "site"
-
-Add bug-tracking tickets and assignments based on user with timestamps
-
-(tickets will only have; date-created, assigned, description, status)
+connect live bugs tabs and sub-pages to backend

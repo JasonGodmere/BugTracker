@@ -1,9 +1,10 @@
-import mongoose, { Schema } from 'mongoose';
+import { ObjectId } from 'mongodb';
+import mongoose from 'mongoose';
 
 const users = mongoose.Schema({
+    userId: ObjectId,
     username: String,
     password: String,
-    site: Schema,
 });
 
 const Users = mongoose.model('Users', users);
