@@ -7,7 +7,7 @@ import SignUp from './SignUp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignIn />
+    <Paperbase />
   </React.StrictMode>,
   document.getElementById('root')
 );

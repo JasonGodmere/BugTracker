@@ -22,20 +22,7 @@ export default function Content() {
       >
         <Toolbar>
           <Grid container spacing={2} alignItems="center">
-            <Grid item>
-              <SearchIcon color="inherit" sx={{ display: 'block' }} />
-            </Grid>
-            <Grid item xs>
-              <TextField
-                fullWidth
-                placeholder="Search by email address, phone number, or user UID"
-                InputProps={{
-                  disableUnderline: true,
-                  sx: { fontSize: 'default' },
-                }}
-                variant="standard"
-              />
-            </Grid>
+            <Grid item xs />
             <Grid item>
               <Button variant="contained" sx={{ mr: 1 }}>
                 Add user
