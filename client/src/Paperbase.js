@@ -5,9 +5,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+
+
 import Navigator from './components/Navigator';
 import Content from './components/Content';
 import Header from './components/Header';
+
+import Authentication from './components/authentication/Authentication.js';
 
 function Copyright() {
   return (
@@ -197,9 +201,15 @@ export default function Paperbase() {
           />
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+
+          {/* Current Page Header */}
           <Header onDrawerToggle={handleDrawerToggle} />
+
           <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#eaeff1' }}>
-            <Content />
+            
+            {/* Current Page Content */}
+            <Authentication />
+
           </Box>
           <Box component="footer" sx={{ p: 2, bgcolor: '#eaeff1' }}>
             <Copyright />

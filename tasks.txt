@@ -7,10 +7,16 @@ DONE USING ATLAS | create local mongodb container and connect to it from node
 
 DONE | finish mongodb models for first iteration
 
-fill in empty controllers code for new mongodb model requests
+Identify the items in each component that need to be dynamic and which need database access, as well as data needed
 
-change front-end back to paperbase and create sub-pages modules
+Create bugs "Content" component that can be reused for each sub-page of liveBugs (no filter, search for now)
 
-connect users tab and sub-pages to backend
+Create deadBugs "Content" component, status cannot be updated for dead bugs (should be readOnly)
 
-connect live bugs tabs and sub-pages to backend
+Duplicate liveBugs "Content" component for each sub-page of liveBugs
+(new, assigned, pending-review)
+
+Implement Super-user/site creation on SignUp, login to existing for signIn and logout functionality for application
+(no encrypted authentication, sessions, or authorization for now)
+
+Make AddUser form for creating new dumby users for site
