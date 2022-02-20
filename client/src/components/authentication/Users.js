@@ -10,7 +10,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 
 export default function Users() {
   return (
-    <div>
+    <React.Fragment>
       <AppBar
           position="static"
           color="default"
@@ -36,6 +36,6 @@ export default function Users() {
       <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
         No users for this project yet
       </Typography>
-    </div>
+    </React.Fragment>
   );
 }

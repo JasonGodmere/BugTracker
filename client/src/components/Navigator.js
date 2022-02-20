@@ -23,9 +23,7 @@ const categories = [
   {
     id: 'Menu',
     children: [
-      {
-        id: 'Authentication', icon: <PeopleIcon />, active: true,
-      },
+      { id: 'Authentication', icon: <PeopleIcon />, active: true },
       { id: 'Live Bugs', icon: <DnsRoundedIcon /> },
       { id: 'Dead Bugs', icon: <PermMediaOutlinedIcon /> },
       { id: 'Logout', icon: <LogoutIcon /> },

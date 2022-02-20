@@ -25,7 +25,7 @@ export default function Content() {
             <Grid item xs />
             <Grid item>
               <Button variant="contained" sx={{ mr: 1 }}>
-                Add user
+                Add Bug
               </Button>
               <Tooltip title="Reload">
                 <IconButton>
@@ -37,7 +37,7 @@ export default function Content() {
         </Toolbar>
       </AppBar>
       <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
-        No users for this project yet
+        No Bugs Yet
       </Typography>
     </Paper>
   );
