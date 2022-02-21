@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
-function AuthHeader(props) {
+function Header(props) {
   const { onDrawerToggle } = props;
 
   return (
@@ -65,8 +65,8 @@ function AuthHeader(props) {
   );
 }
 
-AuthHeader.propTypes = {
+Header.propTypes = {
   onDrawerToggle: PropTypes.func.isRequired,
 };
 
-export default AuthHeader;
+export default Header;

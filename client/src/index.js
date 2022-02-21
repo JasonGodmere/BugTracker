@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Paperbase from './Paperbase';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+
+import App from './App.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Paperbase />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
