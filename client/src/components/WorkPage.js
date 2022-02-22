@@ -10,7 +10,6 @@ import Link from '@mui/material/Link';
 import Navigator from "./navigator/Navigator.js";
 import Window from "./window/Window.js";
 
-
 let theme = createTheme({
   palette: {
     primary: {
