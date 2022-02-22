@@ -19,7 +19,7 @@ export default function Authentication() {
     <React.Fragment>
         <AppBar
             position="static"
-            color="default"
+            color=""
             elevation={0}
             sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}
         >

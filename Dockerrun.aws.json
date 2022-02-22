@@ -1,0 +1,14 @@
+{
+    "AWSEBDockerrunVersion":"1",
+    "Image":{
+        "Name":"jgodmere/bugtracker-client:0.0.0",
+        "Update": "true"
+    },
+
+    "Ports":[
+        {
+            "ContainerPort":80,
+            "HostPort":80
+        }
+    ]
+}

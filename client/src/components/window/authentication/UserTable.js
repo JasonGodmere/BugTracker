@@ -1,48 +1,131 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+import CheckIcon from '@mui/icons-material/Check';
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 const columns = [
-    { 
-        field: 'id', 
-        headerName: 'ID'
-    },
-    { 
-        field: 'username', 
-        headerName: 'Username'
-    },
-    {
-        field: 'email',
-        headerName: 'Email'
-    },
-    {
-        field: 'admin',
-        headerName: 'Admin'
-    }
+  { 
+    id: 'username', 
+    label: 'Username', 
+    minWidth: 100,
+    align: 'left'
+  },
+  { 
+    id: 'email', 
+    label: 'Email', 
+    minWidth: 100,
+    align: 'center'
+  },
+  {
+    id: 'isAdmin',
+    label: 'Is Admin',
+    minWidth: 100,
+    align: 'center'
+  }
 ];
+
+function createData(username, email, isAdmin, edit) {
+  return { username, email, isAdmin, edit };
+}
+
+function isAdmin(value) {
+    // expected bool value
+    return value && <CheckIcon />
+}
 
 const rows = [
-  { id: 1, username: 'mikeJ', email: 'mikeJ@jasongodmere.me', admin: true },
-  { id: 2, username: 'tylerI', email: 'tylerI@jasongodmere.me', admin: false },
-  { id: 3, username: 'willP', email: 'willP@jasongodmere.me', admin: true },
-  { id: 4, username: 'tonyS', email: 'tonyS@jasongodmere.me', admin: false },
-  { id: 5, username: 'tarsD', email: 'tarsD@jasongodmere.me', admin: true },
-  { id: 6, username: 'melG', email: null, admin: false},
-  { id: 7, username: 'cliffordF', email: 'cliffordF@jasongodmere.me', admin: true },
-  { id: 8, username: 'francesR', email: 'francesR@jasongodmere.me', admin: false },
-  { id: 9, username: 'roxieH', email: 'roxieH@jasongodmere.me', admin: true },
-  { id: 10, username: 'technoKing', email: 'technoKing@jasongodmere.me', admin: true },
+  createData('mikeJ', 'mikej@jasongodmere.me', isAdmin(true)),
+  createData('tylerI', 'tyleri@jasongodmere.me', isAdmin(true)),
+  createData('willP', 'willp@jasongodmere.me', isAdmin(false)),
+  createData('tonyS', 'tonys@jasongodmere.me',isAdmin(true)),
+  createData('tarsD', 'tarsd@jasongodmere.me', isAdmin(false)),
+  createData('melG', 'melg@jasongodmere.me', isAdmin(false)),
+  createData('cliffordF', 'cliffordf@jasongodmere.me', isAdmin(false)),
+  createData('francesR', 'francesr@jasongodmere.me',isAdmin(true)),
+  createData('roxieH', 'roxieh@jasongodmere.me', isAdmin(false)),
+  createData('technoKing', 'technoking@jasongodmere.me',isAdmin(true)),
 ];
 
-export default function DataTable() {
+export default function UserTable() {
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
   return (
-    <div style={{ height: 450, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={6}
-        rowsPerPageOptions={[6]}
-        checkboxSelection
+    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <TableContainer sx={{ maxHeight: 440 }}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
+                <TableCell
+                  key="edit"
+                  align="center"
+                  style={{ minWidth: 100 }} 
+                />
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .map((row) => {
+                return (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                    {columns.map((column) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {column.format && typeof value === 'number'
+                            ? column.format(value)
+                            : value}
+                        </TableCell>
+                      );
+                    })}
+                    <TableCell key="edit" align="center">
+                        <IconButton color="primary" aria-label="upload picture" component="span">
+                            <EditIcon />
+                        </IconButton>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
       />
-    </div>
+    </Paper>
   );
 }
