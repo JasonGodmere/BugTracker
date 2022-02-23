@@ -159,8 +159,8 @@ export default function WorkPage() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-        <CssBaseline />
         <Box
           component="nav"
           sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}

@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const columns = [
@@ -71,7 +72,7 @@ export default function UserTable() {
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader size="small" aria-label="sticky table">
           <TableHead>
             <TableRow>
               {columns.map((column) => (
@@ -110,6 +111,9 @@ export default function UserTable() {
                         <IconButton color="primary" aria-label="upload picture" component="span">
                             <EditIcon />
                         </IconButton>
+                        <IconButton aria-label="upload picture" component="span">
+                            <DeleteIcon />
+                        </IconButton>
                     </TableCell>
                   </TableRow>
                 );
@@ -117,15 +121,6 @@ export default function UserTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
     </Paper>
   );
 }
