@@ -20,20 +20,17 @@ import Modal from '@mui/material/Modal';
 const columns = [
   { 
     id: 'username', 
-    label: 'Username', 
-    minWidth: 100,
+    label: 'Username',
     align: 'left'
   },
   { 
     id: 'email', 
-    label: 'Email', 
-    minWidth: 100,
+    label: 'Email',
     align: 'center'
   },
   {
     id: 'isAdmin',
     label: 'Is Admin',
-    minWidth: 100,
     align: 'center'
   }
 ];
@@ -91,7 +88,6 @@ export default function UserTable() {
                 <TableCell
                   key="edit"
                   align="center"
-                  style={{ minWidth: 100 }} 
                 />
             </TableRow>
           </TableHead>
