@@ -16,10 +16,10 @@ import UserTable from "./UserTable.js";
 
 export default function Authentication() {
     return (
-    <React.Fragment>
+    <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
         <AppBar
             position="static"
-            color=""
+            color="default"
             elevation={0}
             sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}
         >
@@ -31,15 +31,19 @@ export default function Authentication() {
                     Add user
                 </Button>
                 <Tooltip title="Reload">
-                    <IconButton>
-                    <RefreshIcon color="inherit" sx={{ display: 'block' }} />
+                    <IconButton
+                        onClick={() => {
+
+                        }}
+                    >
+                        <RefreshIcon color="inherit" sx={{ display: 'block' }} />
                     </IconButton>
                 </Tooltip>
                 </Grid>
             </Grid>
             </Toolbar>
-            <UserTable />
         </AppBar>
-    </React.Fragment>
+        <UserTable />
+    </Paper>
     );
 }
