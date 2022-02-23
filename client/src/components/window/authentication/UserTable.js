@@ -11,6 +11,10 @@ import CheckIcon from '@mui/icons-material/Check';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
 
 
 const columns = [
@@ -107,11 +111,38 @@ export default function UserTable() {
                         </TableCell>
                       );
                     })}
-                    <TableCell key="edit" align="center">
-                        <IconButton color="primary" aria-label="upload picture" component="span">
+                    <TableCell key={row.username} align="center">
+                        <IconButton 
+                            color="primary" 
+                            aria-label="upload picture" 
+                            component="span"
+                            onClick={() => {
+                                alert(row.username);
+                              }}
+                        >
                             <EditIcon />
+                            <Modal
+                                open={false}
+                                aria-labelledby="modal-modal-title"
+                                aria-describedby="modal-modal-description"
+                            >
+                                <Box sx={{}}>
+                                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                                    Text in a modal
+                                    </Typography>
+                                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                    </Typography>
+                                </Box>
+                            </Modal>
                         </IconButton>
-                        <IconButton aria-label="upload picture" component="span">
+                        <IconButton 
+                            aria-label="upload picture" 
+                            component="span"
+                            onClick={() => {
+                                alert(row.username);
+                              }}
+                        >
                             <DeleteIcon />
                         </IconButton>
                     </TableCell>
